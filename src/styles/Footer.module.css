@@ -1,0 +1,10 @@
+footer.footer {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    background-color: var(--bg-dark); /*troquei aqui */
+    color: #fff;/*troquei aqui */
+    box-shadow: var(--shadow);
+}
