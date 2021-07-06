@@ -8,10 +8,15 @@ import { useEffect, useState } from "react";
 export default function Test() {
 
     const [counter,setCounter] = useState(0);
+    const [acumulador,setAcumulador] = useState(0);
 
     useEffect(() =>{
         console.log('atualizou');
     })
+
+    useEffect(() =>{
+        setAcumulador(acumulador + 1);
+    }, [acumulador]) //se não passar acumulador como segundo parametro acorre um loop infinito
 
     return (
         <div className="app">
@@ -20,6 +25,7 @@ export default function Test() {
             <NavBar/>
             <Main>
                 <h1>Contador: {counter}</h1>
+                <h1>Acumulador: {acumulador}</h1>
                 <button onClick={()=> setCounter(counter + 1)}>+</button>
                 <button onClick={()=> setCounter(counter - 1)}>-</button>
                 
